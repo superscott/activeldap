@@ -2,7 +2,7 @@ require 'timeout'
 
 module Timeout
   # STUB
-  def Timeout.alarm(sec, exception=Timeout::Error, &block)
+  def Timeout.alarm(sec, exception=TimeoutError, &block)
     timeout(sec, exception, &block)
   end
 end # Timeout

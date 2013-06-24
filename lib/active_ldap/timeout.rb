@@ -11,7 +11,7 @@ module Timeout
   # process. ALRM is used to avoid conflicts with sleep()
   #
   # This overwrites any signal
-  def Timeout.alarm(sec, exception=Timeout::Error, &block)
+  def Timeout.alarm(sec, exception=TimeoutError, &block)
     return block.call if sec == nil or sec.zero?
  
   

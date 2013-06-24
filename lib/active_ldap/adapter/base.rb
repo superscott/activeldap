@@ -315,7 +315,7 @@ module ActiveLdap
         retry_limit = options[:retry_limit] || @retry_limit
         begin
           do_in_timeout(@timeout, &block)
-        rescue Timeout::Error => e
+        rescue TimeoutError => e
           @logger.error {_('Requested action timed out.')}
           if @retry_on_timeout and retry_limit < 0 and n_retries <= retry_limit
             if connecting?
